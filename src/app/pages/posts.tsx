@@ -1,4 +1,4 @@
-import { Posts } from '../components/Post'
+import { Posts } from '../components/Posts'
 
 export const PostsPage = () => {
 	return <Posts />
