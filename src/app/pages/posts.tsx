@@ -1,5 +1,5 @@
-import { Post } from '../components/Post'
+import { Posts } from '../components/Post'
 
 export const PostsPage = () => {
-	return <Post/>
+	return <Posts />
 }

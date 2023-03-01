@@ -1,6 +1,6 @@
-import { Album } from './../types/album';
-import type { Post } from './../types/post';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { Album } from './../types/album'
+import type { Post } from './../types/post'
 import type { User } from './../types/users'
 
 export const usersApi = createApi({
@@ -12,18 +12,16 @@ export const usersApi = createApi({
 		getUsers: builder.query<User[], string>({
 			query: name => name,
 		}),
-		getPostById: builder.query<Post, string>({
-			query: id => `posts/${id}`,
+		getPostsById: builder.query<Post[], string>({
+			query: userId => `/users/${userId}/posts`,
 		}),
-		getAlbomById: builder.query<Album, string>({
-			query: id => `albums/${id}`,
+		getAlbomById: builder.query<Album[], string>({
+			query: userId => `/users/${userId}/albums`,
 		}),
 	}),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetUsersQuery, useGetPostByIdQuery } = usersApi
-
-
-
+export const { useGetUsersQuery, useGetPostsByIdQuery, useGetAlbomByIdQuery } =
+	usersApi
