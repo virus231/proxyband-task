@@ -6,15 +6,7 @@ function App() {
 
 	return (
 		<div className='App'>
-			{error ? (
-				<>Oh no, there was an error</>
-			) : isLoading ? (
-				<>Loading...</>
-			) : data ? (
-				<>
-					<div>{JSON.stringify(data)}</div>
-				</>
-			) : null}
+			
 		</div>
 	)
 }
